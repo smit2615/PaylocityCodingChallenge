@@ -1,0 +1,57 @@
+<mat-horizontal-stepper [linear]="true" #stepper>
+        <!-- Employee Name -->
+        <mat-step >
+            <ng-template matStepLabel>Fill out employee name</ng-template>
+            <div class="stepper-row">
+                <mat-form-field>
+                    <input matInput placeholder="First name" [(ngModel)]="employee.firstName" name="firstName" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Last name" [(ngModel)]="employee.lastName" name="lastName" required>
+                </mat-form-field>
+            </div>
+            <div>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+        </mat-step>
+
+        <!-- Dependents -->
+        <mat-step>
+            <ng-template matStepLabel>List employee's dependents</ng-template>
+            <div class="stepper-row">
+              <h4>{{employee.Dependents.length + (dependent.FirstName && dependent.LastName ? 1 : 0)}} dependent(s) added</h4>
+            </div>
+            <div class="stepper-row" fxLayout="row" fxLayoutGap="10px">
+                <mat-form-field>
+                    <input matInput placeholder="First name" [(ngModel)]="dependent.FirstName" name="dependentFirstName">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Last name" [(ngModel)]="dependent.LastName" name="dependentLastName">
+                </mat-form-field>
+                <button *ngIf="dependent.FirstName && dependent.LastName" mat-raised-button (click)="addDependent()">Add another</button>
+            </div>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+        </mat-step>
+
+        <!-- Finalize -->
+        <mat-step>
+          <ng-template matStepLabel>Finish</ng-template>
+          <h4>Finish or add another employee</h4>
+          <div class="stepper-row" fxLayout="row" fxLayoutGap="10px">
+            <button mat-raised-button color="primary" (click)="saveEmployee()">Done</button>
+            <button mat-raised-button>+ Add another employee</button>
+          </div>
+          <mat-divider></mat-divider>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+          </div>
+        </mat-step>
+</mat-horizontal-stepper>
+
+<div fxLayout="row" fxLayoutGap="10px">
+    <button mat-stroked-button (click)="close()">Cancel</button>
+</div>

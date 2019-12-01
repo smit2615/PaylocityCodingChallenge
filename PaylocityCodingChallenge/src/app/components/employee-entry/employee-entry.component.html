@@ -1,0 +1,10 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+    <h2>Your Employees</h2>
+
+    <mat-accordion>
+        <app-employee-info *ngFor="let employee of employees" [employee]="employee"></app-employee-info>
+    </mat-accordion>
+    
+
+    <button mat-raised-button color="accent" (click)="openEditModal()">+ Add new employee</button>
+</div>

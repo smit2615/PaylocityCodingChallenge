@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paylocity.Benefits.WebApi", "Paylocity.Benefits.WebApi\Paylocity.Benefits.WebApi.csproj", "{002AB69E-F54E-4B9D-AA74-AF07B685C216}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paylocity.Benefits.WebApi.Business", "Paylocity.Benefits.WebApi.Business\Paylocity.Benefits.WebApi.Business.csproj", "{FECB56F7-88A6-4CA6-B2D6-9858936D9363}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paylocity.Benefits.WebApi.Data", "Paylocity.Benefits.WebApi.Data\Paylocity.Benefits.WebApi.Data.csproj", "{7857CB08-BC63-4A49-9CA8-D6D9A749AEAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paylocity.Benefits.Model", "Paylocity.Benefits.Model\Paylocity.Benefits.Model.csproj", "{C00CFB79-439A-49B7-80D8-02AA16A7301E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paylocity.Benefits.WebApi.Business.UnitTests", "Paylocity.Benefits.WebApi.Business.UnitTests\Paylocity.Benefits.WebApi.Business.UnitTests.csproj", "{1179D76F-7081-48B2-A242-C05F7EAF4D31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paylocity.Benefits.Model.UnitTests", "Paylocity.Benefits.Model.UnitTests\Paylocity.Benefits.Model.UnitTests.csproj", "{41EABE3E-FA15-497F-BD78-DED5CCE8D91B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paylocity.Benefits.WebApi.Data.UnitTests", "Paylocity.Benefits.WebApi.Data.UnitTests\Paylocity.Benefits.WebApi.Data.UnitTests.csproj", "{CA572429-0C44-4884-8753-DF3320331286}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{002AB69E-F54E-4B9D-AA74-AF07B685C216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{002AB69E-F54E-4B9D-AA74-AF07B685C216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{002AB69E-F54E-4B9D-AA74-AF07B685C216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{002AB69E-F54E-4B9D-AA74-AF07B685C216}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FECB56F7-88A6-4CA6-B2D6-9858936D9363}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FECB56F7-88A6-4CA6-B2D6-9858936D9363}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FECB56F7-88A6-4CA6-B2D6-9858936D9363}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FECB56F7-88A6-4CA6-B2D6-9858936D9363}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7857CB08-BC63-4A49-9CA8-D6D9A749AEAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7857CB08-BC63-4A49-9CA8-D6D9A749AEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7857CB08-BC63-4A49-9CA8-D6D9A749AEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7857CB08-BC63-4A49-9CA8-D6D9A749AEAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C00CFB79-439A-49B7-80D8-02AA16A7301E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C00CFB79-439A-49B7-80D8-02AA16A7301E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C00CFB79-439A-49B7-80D8-02AA16A7301E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C00CFB79-439A-49B7-80D8-02AA16A7301E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1179D76F-7081-48B2-A242-C05F7EAF4D31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1179D76F-7081-48B2-A242-C05F7EAF4D31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1179D76F-7081-48B2-A242-C05F7EAF4D31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1179D76F-7081-48B2-A242-C05F7EAF4D31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41EABE3E-FA15-497F-BD78-DED5CCE8D91B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41EABE3E-FA15-497F-BD78-DED5CCE8D91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41EABE3E-FA15-497F-BD78-DED5CCE8D91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41EABE3E-FA15-497F-BD78-DED5CCE8D91B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA572429-0C44-4884-8753-DF3320331286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA572429-0C44-4884-8753-DF3320331286}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA572429-0C44-4884-8753-DF3320331286}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA572429-0C44-4884-8753-DF3320331286}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA9B36D4-B269-4B01-8733-9EA8B4FEC068}
+	EndGlobalSection
+EndGlobal

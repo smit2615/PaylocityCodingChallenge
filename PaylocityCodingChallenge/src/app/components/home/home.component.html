@@ -1,0 +1,10 @@
+<h2>Welcome to the Benefits Portal!</h2>
+<p>Add or remove employees and their dependents below</p>
+
+<div>
+  <div *ngIf="employees?.length == 0">
+    <p>No employees added.</p>
+  </div>
+
+  <app-employee-entry [employees]="employees | async"></app-employee-entry>
+</div>

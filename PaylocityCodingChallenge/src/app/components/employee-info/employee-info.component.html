@@ -1,0 +1,21 @@
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+        {{employee.FirstName}} {{employee.LastName}}
+        </mat-panel-title>
+        <mat-panel-description>
+            Annual Cost: ${{employee.AnnualCost}}
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <h4>Dependents</h4>
+    <mat-divider></mat-divider>
+    <mat-list>
+        <mat-list-item *ngIf="employee.Dependents?.length == 0">This employee has no dependents</mat-list-item>
+        <mat-list-item *ngFor="let dependent of employee.Dependents">
+            <h5 mat-line>{{dependent.FirstName}} {{dependent.LastName}}</h5>
+            <p *ngIf="dependent.IsSpouse" mat-line>spouse</p>
+        </mat-list-item>
+    </mat-list>
+</mat-expansion-panel>

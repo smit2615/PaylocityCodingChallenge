@@ -1,0 +1,9 @@
+.stepper-row {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.stepper-row button {
+    margin-top: 10px;
+    height: fit-content;
+}

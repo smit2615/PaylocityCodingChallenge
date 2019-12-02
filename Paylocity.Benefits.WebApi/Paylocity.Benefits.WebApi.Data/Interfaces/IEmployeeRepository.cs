@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Paylocity.Benefits.WebApi.Data.Interfaces
 {
+    /// <summary>
+    /// Creates and supplies data associated with and employee and their information
+    /// </summary>
     public interface IEmployeeRepository
     {
         Task<Employee> CreateEmployeeAsync(Employee employee);

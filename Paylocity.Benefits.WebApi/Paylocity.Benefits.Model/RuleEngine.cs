@@ -39,6 +39,10 @@ namespace Paylocity.Benefits.WebApi.Model.Models
             }
         }
 
+        /// <summary>
+        /// Applies a BenefitRule's percentage adjustment and adjustment type
+        /// to the total cost needing adjusted after a rule is applied.
+        /// </summary>
         public void ApplyRule()
         {
             var costAdjustment = _rule.Strategy.ApplyRule(_employee) * (_rule.Percentage / 100);

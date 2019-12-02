@@ -56,10 +56,8 @@ namespace Paylocity.Benefits.WebApi.Business.UnitTests
                 {
                     BenefitCategoryId = expectedDependenctCategoryId
                 });
-            mEmployeeRepo.Setup(x => x.CreateEmployeeAsync(It.IsAny<Employee>()))
-                .Verifiable();
-            mBenefitsBLL.Setup(x => x.CalculateAnnualCostsAsync(It.IsAny<Employee>()))
-                .Verifiable();
+            mEmployeeRepo.Setup(x => x.CreateEmployeeAsync(It.Is<Employee>(y => y.EmployeeId == testEmployee.EmployeeId)));
+            mBenefitsBLL.Setup(x => x.CalculateAnnualCostsAsync(It.Is<Employee>(y => y.EmployeeId == testEmployee.EmployeeId)));
 
             //Act
             await target.CreateEmployeeAsync(testEmployee);
@@ -78,10 +76,8 @@ namespace Paylocity.Benefits.WebApi.Business.UnitTests
             //Arrange 
             mEmployeeRepo.Setup(x => x.GetBenefitCategoryByTypeAsync(It.IsAny<BenefitType>()))
                 .ReturnsAsync(new BenefitCategory());
-            mEmployeeRepo.Setup(x => x.CreateEmployeeAsync(It.IsAny<Employee>()))
-                .Verifiable();
-            mBenefitsBLL.Setup(x => x.CalculateAnnualCostsAsync(It.IsAny<Employee>()))
-                .Verifiable();
+            mEmployeeRepo.Setup(x => x.CreateEmployeeAsync(It.Is<Employee>(y => y.EmployeeId == testEmployee.EmployeeId)));
+            mBenefitsBLL.Setup(x => x.CalculateAnnualCostsAsync(It.Is<Employee>(y => y.EmployeeId == testEmployee.EmployeeId)));
 
             var expectedCompensationRate = 2000;
             testEmployee.CompensationRate = expectedCompensationRate;

@@ -40,12 +40,7 @@ namespace Paylocity.Benefits.WebApi.Business.UnitTests
             //Arrange
             mRuleRepo.Setup(x => x.GetAllRules())
                 .ReturnsAsync(new List<BenefitRule>());
-            mRuleEngine.Setup(x => x.Start(It.IsAny<Employee>()))
-                .Verifiable();
-            mRuleEngine.Setup(x => x.SetRule(It.IsAny<BenefitRule>()))
-                .Verifiable();
-            mRuleEngine.Setup(x => x.ApplyRule())
-                .Verifiable();
+            mRuleEngine.Setup(x => x.Start(It.Is<Employee>(y => y.EmployeeId == testEmployee.EmployeeId)));
             mRuleEngine.Setup(x => x.End())
                 .Returns(1000);
 

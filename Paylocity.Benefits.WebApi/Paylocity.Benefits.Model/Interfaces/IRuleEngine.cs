@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace Paylocity.Benefits.Model.Interfaces
 {
+    /// <summary>
+    /// Responsible for applying the logic to one or more BenefitRule objects
+    /// to a given Employee object
+    /// </summary>
     public interface IRuleEngine
     {
         void SetRule(BenefitRule rule);

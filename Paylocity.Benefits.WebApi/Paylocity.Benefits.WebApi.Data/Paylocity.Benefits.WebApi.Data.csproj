@@ -52,7 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseRepository.cs" />
     <Compile Include="BenefitRuleRepository.cs" />
     <Compile Include="Contexts\BenefitsContext.cs" />
     <Compile Include="EmployeeRepository.cs" />

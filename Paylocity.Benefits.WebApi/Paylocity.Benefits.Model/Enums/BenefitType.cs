@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Paylocity.Benefits.Model.Enums
 {
+    /// <summary>
+    /// Relates to the BenefitCategoryId of the BenefitCategory object
+    /// </summary>
     public enum BenefitType
     {
         Employee = 1,

@@ -8,6 +8,11 @@ using System.Threading.Tasks;
 
 namespace Paylocity.Benefits.Model.Interfaces
 {
+    /// <summary>
+    /// Contains the logic for applying a BenefitRule to an Employee.
+    /// The decimal returned represents the total benefit cost that needs adjusted
+    /// based on the application of the rule.
+    /// </summary>
     public interface IRuleStrategy
     {
         decimal ApplyRule(Employee employee);

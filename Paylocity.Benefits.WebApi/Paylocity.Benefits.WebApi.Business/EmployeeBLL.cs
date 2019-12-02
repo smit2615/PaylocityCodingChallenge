@@ -30,11 +30,14 @@ namespace Paylocity.Benefits.WebApi.Business
                 employee.CompensationRate = _defaultCompensationRate;
             }
             employee.BenefitCategory = await _employeeRepository.GetBenefitCategoryByTypeAsync(BenefitType.Employee);
-            var dependentBenefitCategory = await _employeeRepository.GetBenefitCategoryByTypeAsync(BenefitType.Dependent);
-
-            foreach(var dependent in employee.Dependents)
+            if(employee.Dependents.Any())
             {
-                dependent.BenefitCategory = dependentBenefitCategory;
+                var dependentBenefitCategory = await _employeeRepository.GetBenefitCategoryByTypeAsync(BenefitType.Dependent);
+
+                foreach (var dependent in employee.Dependents)
+                {
+                    dependent.BenefitCategory = dependentBenefitCategory;
+                }
             }
 
             await _benefitsBLL.CalculateAnnualCostsAsync(employee);

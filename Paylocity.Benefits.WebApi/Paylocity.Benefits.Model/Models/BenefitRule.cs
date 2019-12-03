@@ -23,7 +23,7 @@ namespace Paylocity.Benefits.Model.Models
         public int BenefitRuleId { get; set; } // Relates to RuleType enum used for creation in RuleFactory
         public string Description { get; set; } // Rule name or description
         public AdjustmentType AdjustmentType { get; set; } // Discount or upcharge
-        public decimal Percentage { get; set; } // Percentage the cost will be adjusted
+        public decimal Amount { get; set; } // Amount cost will be adjusted
         public IRuleStrategy Strategy { get; set; } // Rule application logic
     }
 }

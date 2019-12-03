@@ -1,5 +1,5 @@
 # Paylocity Coding Challenge
-This is a sample web application made for the Pyalocity coding challenge. The application allows employers to input their
+This is a sample web application made for the Paylocity coding challenge. The application allows employers to input their
 employees along with their dependents to get a preview of the annual costs of each employee after benefit deductions. 
 
 This application makes these assumptions: 

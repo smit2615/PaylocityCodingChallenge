@@ -3,12 +3,8 @@ import { Dependent } from './dependent';
 
 export class Employee extends Person {
     EmployeeId: number
-    Dependents: Dependent[];
-    CompensationRate: number;
+    Dependents: Dependent[] = [];
     AnnualCost: number;
-
-    constructor() {
-        super()
-        this.Dependents = [];
-    }
+    AnnualSalary: number;
+    BenefitCost: number;
 }

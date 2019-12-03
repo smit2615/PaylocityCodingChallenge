@@ -41,13 +41,13 @@
           <ng-template matStepLabel>Finish</ng-template>
           <h4>Finish or add another employee</h4>
           <div class="stepper-row" fxLayout="row" fxLayoutGap="10px">
-            <button mat-raised-button color="primary" (click)="saveEmployee()">Done</button>
-            <button mat-raised-button>+ Add another employee</button>
+            <button mat-raised-button color="primary" (click)="saveEmployee(false)">Done</button>
+            <button mat-raised-button (click)="saveEmployee(true); stepper.reset();">+ Add another employee</button>
           </div>
           <mat-divider></mat-divider>
           <div>
             <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="stepper.reset()">Reset</button>
+            <button mat-button (click)="stepper.reset(); reset();">Reset</button>
           </div>
         </mat-step>
 </mat-horizontal-stepper>

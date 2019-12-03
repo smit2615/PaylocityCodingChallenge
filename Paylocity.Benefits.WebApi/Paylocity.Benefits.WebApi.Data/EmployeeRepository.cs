@@ -39,9 +39,9 @@ namespace Paylocity.Benefits.WebApi.Data
             using(var db = new BenefitsContext())
             {
                 return await db.Employees
-                    .Include(x => x.BenefitCategory)
+                    .Include(x => x.BenefitCategories)
                     .Include(x => x.Dependents)
-                        .Include(x => x.Dependents.Select(y => y.BenefitCategory))
+                        .Include(x => x.Dependents.Select(y => y.BenefitCategories))
                     .ToListAsync();
             }
         }

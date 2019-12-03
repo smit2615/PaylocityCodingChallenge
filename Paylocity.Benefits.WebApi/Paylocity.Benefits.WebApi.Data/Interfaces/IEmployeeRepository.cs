@@ -17,6 +17,6 @@ namespace Paylocity.Benefits.WebApi.Data.Interfaces
         Task<Employee> CreateEmployeeAsync(Employee employee);
         Task<Employee> GetEmployeeByIdAsync(int employeeId);
         Task<List<Employee>> GetAllEmployeesAsync();
-        Task<BenefitCategory> GetBenefitCategoryByTypeAsync(BenefitType benefitType);
+        Task<BenefitCategory> GetBenefitCategoryByTypeAsync(BenefitType type);
     }
 }

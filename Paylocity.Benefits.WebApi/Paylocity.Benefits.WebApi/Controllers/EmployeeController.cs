@@ -1,4 +1,5 @@
-﻿using Paylocity.Benefits.WebApi.Business.Interfaces;
+﻿using Paylocity.Benefits.Model.ViewModels;
+using Paylocity.Benefits.WebApi.Business.Interfaces;
 using Paylocity.Benefits.WebApi.Data.Interfaces;
 using Paylocity.Benefits.WebApi.Model.Models;
 using System;
@@ -24,15 +25,16 @@ namespace Paylocity.Benefits.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<Employee> CreateEmployeeAsync([FromBody] Employee employee)
+        public async Task<EmployeeVM> CreateEmployeeAsync([FromBody] Employee employee)
         {
             return await _employeeBLL.CreateEmployeeAsync(employee);
         }
 
         [HttpGet]
-        public async Task<List<Employee>> GetAllEmployeesAsync()
+        public async Task<List<EmployeeVM>> GetAllEmployeesAsync()
         {
-            return await _employeeRepo.GetAllEmployeesAsync();
+            return (await _employeeRepo.GetAllEmployeesAsync())
+                .ConvertAll(x => (EmployeeVM) x);
         }
     }
 }

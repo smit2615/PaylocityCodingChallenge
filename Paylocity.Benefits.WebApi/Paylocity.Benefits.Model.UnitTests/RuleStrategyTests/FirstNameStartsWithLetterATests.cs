@@ -20,9 +20,11 @@ namespace Paylocity.Benefits.Model.UnitTests.RuleStrategyTests
             target = new FirstNameStartsWithLetterARule();
             testEmployee = new Employee()
             {
-                BenefitCategory = new BenefitCategory()
-                {
-                    Amount = 1000
+                BenefitCategories = new List<BenefitCategory>() {
+                new BenefitCategory()
+                    {
+                        Amount = 1000
+                    }
                 }
             };
         }
@@ -49,9 +51,11 @@ namespace Paylocity.Benefits.Model.UnitTests.RuleStrategyTests
             var testDependent = new Dependent()
             {
                 FirstName = "A",
-                BenefitCategory = new BenefitCategory()
-                {
-                    Amount = 500
+                BenefitCategories = new List<BenefitCategory>() {
+                    new BenefitCategory()
+                    {
+                        Amount = 500
+                    }
                 }
             };
             testEmployee.Dependents.Add(testDependent);

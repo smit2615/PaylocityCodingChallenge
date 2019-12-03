@@ -10,12 +10,12 @@ import { Observable, BehaviorSubject } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-  employees: BehaviorSubject<Employee[]>;
+  $employees: BehaviorSubject<Employee[]>;
 
   constructor(private _employeeService: EmployeeService) { }
 
   async ngOnInit() {
-    this.employees = await this._employeeService.getAllEmployees();
+    this.$employees = await this._employeeService.getAllEmployees();
   }
 
 }

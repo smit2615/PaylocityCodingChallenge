@@ -11,9 +11,8 @@ namespace Paylocity.Benefits.WebApi.Data.Contexts
 {
     public class BenefitsContext : DbContext
     {
-        private readonly bool _inMemory;
 
-        public BenefitsContext(bool inMemory = false) : base("BenefitsContext")
+        public BenefitsContext() : base("BenefitsContext")
         {
         }
 

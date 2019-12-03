@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EmployeeEntryComponent } from './employee-entry.component';
+import { AppModule } from 'src/app/app.module';
+import { HomeModule } from 'src/app/modules/home/home.module';
 
 describe('EmployeeEntryComponent', () => {
   let component: EmployeeEntryComponent;
@@ -8,7 +10,8 @@ describe('EmployeeEntryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EmployeeEntryComponent ]
+      declarations: [ ],
+      imports: [ HomeModule ]
     })
     .compileComponents();
   }));
@@ -19,7 +22,7 @@ describe('EmployeeEntryComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  fit('should create', () => {
     expect(component).toBeTruthy();
   });
 });

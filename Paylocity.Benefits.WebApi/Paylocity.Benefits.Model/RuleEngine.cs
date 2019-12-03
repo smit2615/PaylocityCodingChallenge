@@ -32,10 +32,10 @@ namespace Paylocity.Benefits.WebApi.Model.Models
         {
             _employee = employee;
 
-            _benefitCost = _employee.BenefitCategory.Amount;
+            _benefitCost = _employee.BaseBenfitCost;
             foreach (var dependent in _employee.Dependents)
             {
-                _benefitCost += dependent.BenefitCategory.Amount;
+                _benefitCost += dependent.BaseBenfitCost;
             }
         }
 
@@ -45,12 +45,16 @@ namespace Paylocity.Benefits.WebApi.Model.Models
         /// </summary>
         public void ApplyRule()
         {
-            var costAdjustment = _rule.Strategy.ApplyRule(_employee) * (_rule.Percentage / 100);
-            _benefitCost += _rule.AdjustmentType == AdjustmentType.Discount ? -costAdjustment : costAdjustment;
+            var costAdjustment = _rule.Strategy.ApplyRule(_employee);
+            costAdjustment = _rule.AdjustmentType == AdjustmentType.Percentage ?
+                costAdjustment * (_rule.Amount / 100) :
+                costAdjustment + _rule.Amount;
+            _benefitCost += costAdjustment;
         }
 
         public decimal End()
         {
+            _employee.BenefitCost = _benefitCost;
             return _benefitCost;
         }
     }

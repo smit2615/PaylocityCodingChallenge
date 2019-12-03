@@ -29,24 +29,30 @@ namespace Paylocity.Benefits.Model.UnitTests
 
             testEmployee = new Employee()
             {
-                BenefitCategory = new BenefitCategory()
-                {
-                    Amount = 1000
+                BenefitCategories = new List<BenefitCategory>() {
+                    new BenefitCategory()
+                    {
+                        Amount = 1000
+                    }
                 },
                 Dependents = new List<Dependent>()
                 {
                     new Dependent()
                     {
-                        BenefitCategory = new BenefitCategory()
-                        {
-                            Amount = 500
+                        BenefitCategories = new List<BenefitCategory>() {
+                            new BenefitCategory()
+                            {
+                                Amount = 500
+                            }
                         }
                     },
                     new Dependent()
                     {
-                        BenefitCategory = new BenefitCategory()
-                        {
-                            Amount = 500
+                        BenefitCategories = new List<BenefitCategory>() {
+                            new BenefitCategory()
+                            {
+                                Amount = 500
+                            }
                         }
                     }
                 }
@@ -72,8 +78,8 @@ namespace Paylocity.Benefits.Model.UnitTests
             //Arrange
             var benefitRule = new BenefitRule()
             {
-                Percentage = 10,
-                AdjustmentType = Enums.AdjustmentType.Discount,
+                Amount = -10,
+                AdjustmentType = Enums.AdjustmentType.Percentage,
             };
             target.Start(testEmployee);
             target.SetRule(benefitRule);
@@ -94,14 +100,35 @@ namespace Paylocity.Benefits.Model.UnitTests
             //Arrange
             var benefitRule = new BenefitRule()
             {
-                Percentage = 10,
-                AdjustmentType = Enums.AdjustmentType.Upcharge,
+                Amount = 10,
+                AdjustmentType = Enums.AdjustmentType.Percentage,
             };
             target.Start(testEmployee);
             target.SetRule(benefitRule);
             mStrategy.Setup(x => x.ApplyRule(It.IsAny<Employee>()))
                 .Returns(1000);
             var expectedBenefitCost = 2100;
+
+            //Act
+            target.ApplyRule();
+
+            //Assert
+            Assert.AreEqual(expectedBenefitCost, target.End());
+        }
+
+        public void RuleEngine_AppliesFlatRate()
+        {
+            //Arrange
+            var benefitRule = new BenefitRule()
+            {
+                Amount = -100,
+                AdjustmentType = Enums.AdjustmentType.FlatRate,
+            };
+            target.Start(testEmployee);
+            target.SetRule(benefitRule);
+            mStrategy.Setup(x => x.ApplyRule(It.IsAny<Employee>()))
+                .Returns(1000);
+            var expectedBenefitCost = 1900;
 
             //Act
             target.ApplyRule();

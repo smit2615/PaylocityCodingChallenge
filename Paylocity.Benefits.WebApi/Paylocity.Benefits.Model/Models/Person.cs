@@ -11,6 +11,24 @@ namespace Paylocity.Benefits.WebApi.Model.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public BenefitCategory BenefitCategory { get; set; }
+        public ICollection<BenefitCategory> BenefitCategories { get; set; } = new List<BenefitCategory>();
+
+        /// <summary>
+        /// Calculates benefit cost before any rules are applied to this Person
+        /// </summary>
+        /// <returns></returns>
+        public decimal BaseBenfitCost
+        {
+            get
+            {
+                decimal total = 0;
+                foreach(var benefit in BenefitCategories)
+                {
+                    total += benefit.Amount;
+                }
+
+                return total;
+            }
+        }
     }
 }

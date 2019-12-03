@@ -26,7 +26,7 @@ export class EmployeeEntryComponent implements OnInit {
       {
         data: { 
           firstName: employee.FirstName, lastName: employee.LastName,
-          dependents: employee.Dependents, rate: employee.CompensationRate
+          dependents: employee.Dependents, annualCost: employee.AnnualCost
         }
       });
   }

@@ -8,7 +8,7 @@ namespace Paylocity.Benefits.Model.Enums
 {
     public enum AdjustmentType
     {
-        Discount = 1,
-        Upcharge = 2
+        Percentage = 1,
+        FlatRate = 2
     }
 }

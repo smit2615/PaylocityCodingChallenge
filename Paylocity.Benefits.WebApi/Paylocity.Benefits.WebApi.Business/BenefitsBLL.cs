@@ -36,7 +36,8 @@ namespace Paylocity.Benefits.WebApi.Business
             }
 
             var benefitCost = _ruleEngine.End();
-            employee.AnnualCost = (employee.CompensationRate * _numPayPeriods) - benefitCost;
+            employee.AnnualSalary = (employee.CompensationRate * _numPayPeriods);
+            employee.AnnualCost = employee.AnnualSalary - benefitCost;
         }
     }
 }

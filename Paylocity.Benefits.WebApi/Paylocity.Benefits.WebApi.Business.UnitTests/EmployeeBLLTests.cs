@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -63,10 +64,10 @@ namespace Paylocity.Benefits.WebApi.Business.UnitTests
             await target.CreateEmployeeAsync(testEmployee);
 
             //Assert
-            Assert.AreEqual(testEmployee.BenefitCategory.BenefitCategoryId, expectedEmployeeCategoryId);
+            Assert.AreEqual(testEmployee.BenefitCategories.First().BenefitCategoryId, expectedEmployeeCategoryId);
             foreach(var dependent in testEmployee.Dependents)
             {
-                Assert.AreEqual(expectedDependenctCategoryId, dependent.BenefitCategory.BenefitCategoryId);
+                Assert.AreEqual(expectedDependenctCategoryId, dependent.BenefitCategories.First().BenefitCategoryId);
             }
         }
 

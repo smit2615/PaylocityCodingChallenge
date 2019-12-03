@@ -9,10 +9,10 @@ import { environment } from 'src/environments/environment';
 })
 export class EmployeeService {
 
-  private _employees: BehaviorSubject<Employee[]>;
+  private $employees: BehaviorSubject<Employee[]>;
 
   constructor(private _httpClient: HttpClient) {
-    this._employees = new BehaviorSubject([]);
+    this.$employees = new BehaviorSubject([]);
   }
 
   public createEmployee(employee: Employee): Observable<Employee> {
@@ -21,11 +21,11 @@ export class EmployeeService {
 
   public async getAllEmployees() {
     await this.refresh();
-    return this._employees;
+    return this.$employees;
   }
 
   private async refresh() {
     return await this._httpClient.get<Employee[]>(environment.apiBaseUrl + 'v1/Employee')
-      .subscribe(x => this._employees.next(x));
+      .subscribe(x => this.$employees.next(x));
   }
 }

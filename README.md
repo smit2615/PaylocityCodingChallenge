@@ -12,7 +12,7 @@ This application makes these assumptions:
 ## Software Design and Architecture
 This app uses a multi-tier architecture that consists of a front-end Angular project and a web API comprised with a business layer
 and data layer on the back-end. In an effort to produce software that isn't tightly coupled, each layer is "unaware" of the details 
-present in any layer at a higher level than itself. For example, in the arrangement arrangement below, the data layer does not contain 
+present in any layer at a higher level than itself. For example, in the arrangement below, the data layer does not contain 
 references to things defined in the domain of the business layer or UI.
 > UI --> Web API --> Business Layer --> Data Layer 
 

@@ -14,7 +14,6 @@ namespace Paylocity.Benefits.Model.RuleStrategies
         public decimal ApplyRule(Employee employee)
         {
             var costAdjustment = employee.FirstName.ToLower().StartsWith("a") ? employee.BaseBenfitCost : 0;
-            employee.BenefitCost = costAdjustment;
 
             foreach(var dependent in employee.Dependents)
             {
